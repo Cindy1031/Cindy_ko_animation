@@ -1,0 +1,144 @@
+/* This changes three of the default styles and many webdesigners include this in the top of every style they create. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+.row {
+  margin: 32px;
+  border: .5px solid lightgray;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.square {
+  width: 100px;
+  height: 100px;
+  background: deeppink;
+  position: absolute;
+  mix-blend-mode: multiply;
+
+
+}
+#square2, #square3, #square4 {
+  background: mediumslateblue;
+  border-radius: 5px;
+  transform: skewY(15deg) translate(40px, 20px);
+}
+
+
+
+@keyframes my_anime1 {
+  0% {
+    opacity: 0;
+    transform: skewY(0deg) translate(0px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: skewY(15deg) translate(40px, 15px);
+    width: 90px;
+  }
+}
+
+#square3 {
+  opacity: 0;
+  animation-name: my_anime1;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  /* other properties */
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+@keyframes my-animation {
+  from {
+    background-color: #ff7a59;
+    width: 300px;
+    top: 10px;
+  }
+  to {
+    background-color: #33475b;
+    width: 50px;
+    top: 100px;
+  }
+}
+
+@keyframes my_anime2 {
+  0% {
+   transform: scale(0.1);
+   opacity: 0;
+ }
+ 60% {
+   transform: scale(1.2);
+   opacity: 1;
+ }
+ 100% {
+   transform: scale(3);
+ }
+}
+
+#square4 {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  background-color: red;
+  animation-name: stretch;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: yellow;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#square5 {
+  opacity: 0;
+  animation: my_anime2 4s 0s,
+             my_anime3 2s 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  background: deepskyblue;
+}
